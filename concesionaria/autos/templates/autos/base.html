@@ -1,18 +1,28 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'autos/styles.css' %}">
+    <title>{% block title %}App{% endblock %}</title>
 </head>
+
+<nav class="navbar">
+    <div class="navbar-left">
+        <h2 class="navbar-name">
+            Concesionaria
+        </h2>
+    </div>
+
+    <div class="navbar-links">
+        <a href="{% url 'autos' %}">Autos</a>
+        <a href="{% url 'inicio' %}">Inicio</a>
+    </div>
+</nav>
+
 <body>
-    
-    <nav>
-        <ul>
-            <li><a href="{% url 'autos' %}">Autos</a></li>
-            <li><a href="{% url 'inicio' %}">Inicio</a></li>
-        </ul>
-    </nav>
     
     {% block body %}
 

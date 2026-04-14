@@ -1,0 +1,47 @@
+
+.navbar{
+    height:70px;
+    color:blue;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.navbar-left{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-name{
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.navbar-links{
+    display:flex;
+    gap:15px;
+}
+
+.navbar-links a{
+    color:blue;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.navbar-links a:hover{
+    color:lightblue;
+}
+
+body{
+    margin:0;
+    padding-top:70px; /* evita que el contenido quede oculto detrás de la barra de navegación */
+}

@@ -4,10 +4,12 @@
 
     <h1>Autos</h1>
     <p>Lista de autos disponibles:</p>
-    <!-- falta añadir datos a autos a traves de admin -->
     <ul>
-        <li>Auto 1</li>
-        <li>Auto 2</li>
-        <li>Auto 3</li>
+        {% for auto in autos %}
+            <li>Modelo: {{ auto.marca }} - {{ auto.modelo }}</li>
+            <li>Precio: {{ auto.precio }}</li>
+            <li>Año: {{ auto.anio }}</li>
+            <hr> <!-- Separador entre autos -->
+        {% endfor %}
     </ul>
 {% endblock %}

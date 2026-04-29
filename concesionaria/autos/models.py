@@ -15,7 +15,7 @@ class Auto(models.Model):
     anio = models.IntegerField()
     precio = models.DecimalField(decimal_places=2, max_digits=10)
     color = models.CharField(max_length=20)
-    vendedor = models.ManyToManyField(Vendedor, default=None, blank=True, null=True, related_name="auto")
+    vendedor = models.ManyToManyField(Vendedor, default=None, blank=True, null=True, related_name="autos")
 
     def __str__(self):
         return f"{self.marca} {self.modelo} ({self.anio}) - ${self.precio}"

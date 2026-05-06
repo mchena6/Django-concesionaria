@@ -6,11 +6,15 @@
 
     <h1>Autos</h1>
     <p>Lista de autos disponibles:</p>
+    <a href="{% url 'crear_auto' %}">Crear auto</a>
     <ul>
         {% for auto in autos %}
             <li>Modelo: {{ auto.marca }} - {{ auto.modelo }}</li>
             <li>Precio: {{ auto.precio }}</li>
             <li>Año: {{ auto.anio }}</li>
+            <li>Vendedor: {{ auto.vendedor }}</li>
+            <a href="{% url 'eliminar_auto' auto.id %}"> Eliminar </a>
+            <a href="{% url 'editar_auto' auto.id %}"> Editar </a>
             <hr> <!-- Separador entre autos -->
         {% endfor %}
     </ul>

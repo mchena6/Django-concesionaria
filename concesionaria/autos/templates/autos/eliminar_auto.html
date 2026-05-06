@@ -1,0 +1,22 @@
+{% extends 'autos/base.html'%}
+
+{%block body%}
+
+<h1>Borrar vehiculo</h1>
+
+<form method="post">
+
+    {% csrf_token %}
+    
+    <div>¿Estás seguro de borrar el vehiculo?</div>
+    <h3>
+        vehiculo: {{ auto.marca }}, {{auto.modelo}}
+    </h3>
+
+    <button type="submit"> Sí, borrar. </button>
+    <a href="{% url 'tareas' %}">No, volver.</a>
+
+</form>
+
+
+{%endblock%}

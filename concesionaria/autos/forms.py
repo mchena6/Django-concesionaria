@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Auto
+from .models import Auto, Vendedor
 
 class AutoForm(forms.ModelForm):
     class Meta:
@@ -13,3 +13,13 @@ class AutoForm(forms.ModelForm):
             "color",
             "vendedor",
         ]
+
+class VendedorForm(forms.ModelForm):
+    class Meta:
+        model = Vendedor
+        fields = [
+            "nombre",
+            "email",
+            "telefono",
+        ]
+        

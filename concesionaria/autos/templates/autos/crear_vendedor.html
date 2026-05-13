@@ -1,0 +1,14 @@
+{% extends 'autos/base.html'%} 
+
+{%block body%}
+
+<h1>Ingresar vendedor</h1>
+<form method="post">
+  {% csrf_token %} 
+  
+  {{ form.as_p}}
+
+  <button type="submit">Agregar</button>
+</form>
+
+{%endblock%}

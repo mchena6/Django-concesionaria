@@ -2,17 +2,12 @@ from django import forms
 
 from .models import Auto, Vendedor
 
+
 class AutoForm(forms.ModelForm):
     class Meta:
         model = Auto
-        fields = [
-            "marca",
-            "modelo",
-            "anio",
-            "precio",
-            "color",
-            "vendedor",
-        ]
+        fields = ["marca", "modelo", "anio", "precio", "color", "vendedor", "imagen"]
+
 
 class VendedorForm(forms.ModelForm):
     class Meta:
@@ -22,4 +17,3 @@ class VendedorForm(forms.ModelForm):
             "email",
             "telefono",
         ]
-        

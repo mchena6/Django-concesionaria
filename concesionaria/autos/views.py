@@ -16,7 +16,7 @@ def inicio(request):
 
 def crear_auto(request):
     if request.method == "POST":
-        form = AutoForm(request.POST)
+        form = AutoForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect("autos")

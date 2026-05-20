@@ -12,6 +12,11 @@
     <li>Modelo: {{ auto.marca }} - {{ auto.modelo }}</li>
     <li>Precio: {{ auto.precio }}</li>
     <li>Año: {{ auto.anio }}</li>
+    {% if post.imagen %}
+        <img src="{{ auto.imagen.url }}" alt="Imagen del auto" width="200" />
+    {% else %}
+        <p>Imagen no disponible</p>
+    {% endif %}
     <li>Vendedor: {{ auto.vendedor.all|join:", " }}</li>
     <a href="{% url 'eliminar_auto' auto.id %}"> Eliminar </a>
     <a href="{% url 'editar_auto' auto.id %}"> Editar </a>

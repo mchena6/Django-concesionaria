@@ -12,7 +12,7 @@
     <li>Modelo: {{ auto.marca }} - {{ auto.modelo }}</li>
     <li>Precio: {{ auto.precio }}</li>
     <li>Año: {{ auto.anio }}</li>
-    {% if post.imagen %}
+    {% if auto.imagen %}
         <img src="{{ auto.imagen.url }}" alt="Imagen del auto" width="200" />
     {% else %}
         <p>Imagen no disponible</p>

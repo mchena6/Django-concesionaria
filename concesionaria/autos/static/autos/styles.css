@@ -4,9 +4,10 @@
     color:blue;
     display:flex;
     align-items:center;
+    background-color: white;
     justify-content:space-between;
     padding:0 40px;
-    position: fixed;
+    position:fixed;
     top: 0;
     left: 0;
     width: 100%;

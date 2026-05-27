@@ -57,7 +57,7 @@ ROOT_URLCONF = "concesionaria.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / 'templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -68,6 +68,10 @@ TEMPLATES = [
         },
     },
 ]
+
+
+LOGIN_REDIRECT_URL = 'autos'
+LOGOUT_REDIRECT_URL = 'inicio'
 
 WSGI_APPLICATION = "concesionaria.wsgi.application"
 

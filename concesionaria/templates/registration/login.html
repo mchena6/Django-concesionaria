@@ -1,0 +1,15 @@
+{% extends 'autos/base.html'%}
+
+{%block body%}
+
+<h1>Ingrese sus datos</h1>
+<form method="post">
+
+    {% csrf_token %}
+    {{ form.as_p}}
+
+    <button type="submit"> Iniciar sesion</button>
+</form>
+<a href="{% url 'registrarse' %}">¿No tienes una cuenta? Registrarse</a>
+
+{%endblock%}

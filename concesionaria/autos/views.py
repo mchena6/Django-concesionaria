@@ -58,3 +58,30 @@ def crear_vendedor(request):
     else:
         form = VendedorForm()
         return render(request, "autos/crear_vendedor.html", {"form": form})
+
+
+def editar_vendedor(request, id):
+    vendedor = get_object_or_404(Vendedor, id=id)
+
+    if request.method == "POST":
+        form = VendedorForm(request.POST, instance = vendedor)
+        if form.is_valid():
+            form.save()
+            return redirect("autos")
+        
+    else: 
+        form = VendedorForm(instance = vendedor)
+
+    return render(request, "autos/editar_vendedor.html", {"form": form})
+
+
+def eliminar_vendedor(request, id):
+    vendedor = get_object_or_404(Vendedor, id=id)
+
+    if request.method == "POST":
+        vendedor.activo = False
+        vendedor.save()
+
+        return redirect("autos")
+    
+    return render(request, "autos/eliminar_vendedor.html", {"vendedor": vendedor})

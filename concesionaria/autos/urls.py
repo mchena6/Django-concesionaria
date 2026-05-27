@@ -9,4 +9,6 @@ urlpatterns= [
         path("eliminar/<int:id>",views.eliminar_auto, name="eliminar_auto"),
         path("crear_vendedor", views.crear_vendedor, name="crear_vendedor"),
         path("registrarse/", views.registrarse, name="registrarse"),
+        path("editar_vendedor/<int:id>", views.editar_vendedor, name="editar_vendedor"),
+        path("eliminar_vendedor/<int:id>", views.eliminar_vendedor, name="eliminar_vendedor")
 ]

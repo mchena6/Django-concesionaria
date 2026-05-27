@@ -6,6 +6,7 @@ class Vendedor(models.Model):
     nombre = models.CharField(max_length=50)
     email = models.EmailField()
     telefono = models.CharField(max_length=20)
+    activo = models.BooleanField(default=True)
 
     def __str__(self):
         return f"{self.nombre} contacto: {self.email} - {self.telefono}"
@@ -13,6 +14,7 @@ class Vendedor(models.Model):
     class Meta:
         verbose_name = "Vendedor"
         verbose_name_plural = "Vendedores"
+    
 
 
 class Auto(models.Model):

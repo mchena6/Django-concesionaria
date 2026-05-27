@@ -1,0 +1,22 @@
+{% extends 'autos/base.html'%}
+
+{%block body%}
+
+<h1>Borrar vendedor</h1>
+
+<form method="post">
+
+    {% csrf_token %}
+    
+    <div>¿Estás seguro de borrar al vendedor?</div>
+    <h3>
+        vendedor: {{ vendedor.nombre }}
+    </h3>
+
+    <button type="submit"> Sí, borrar. </button>
+    <a href="{% url 'autos' %}">No, volver.</a>
+
+</form>
+
+
+{%endblock%}

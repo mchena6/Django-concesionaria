@@ -42,7 +42,82 @@
     color:lightblue;
 }
 
+.welcome{
+    text-align:center;
+    margin-top:50px;
+    font-size:28px;
+}
+
+.home-image{
+    display:block;
+    margin:10px auto;
+    max-width:100%;
+    height:auto;
+}
+
+.box-cars{
+    list-style-type:none;
+    padding:0;
+    display:flex;
+    flex-direction:row;
+    gap:20px;
+    text-align: center;
+    align-items: center;
+    background-color: yellow;
+    max-width: 100%;
+}
+
+.box-cars img{
+    max-width: 250px;
+    height: auto;
+}
+
+.car-item{
+    border:2px solid #ccc;
+    padding:15px;
+    margin-bottom:20px;
+    border-radius:5px;
+    background-color: white;
+}
+
+.btn{
+    display:inline-block;
+    padding:10px 20px;
+    background-color:blue;
+    color:white;    
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:500;
+}
+
+.btn-eliminar{
+    background-color: red;
+}
+
+.btn:hover{
+    background-color:lightblue;
+    color:darkblue;
+}
+
+.btn-eliminar:hover{
+    background-color: darkred;
+    color: lightcoral;
+}
+
+.form{
+    display:flex;
+    flex-direction:column;
+    background-color: lightblue;
+    padding:20px;
+    max-width:400px;
+    width:100%;
+    align-items: center;
+}
+
 body{
-    margin:0;
-    padding-top:70px; /* evita que el contenido quede oculto detrás de la barra de navegación */
+    margin: 0;
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

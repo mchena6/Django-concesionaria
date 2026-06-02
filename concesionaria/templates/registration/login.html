@@ -3,13 +3,14 @@
 {%block body%}
 
 <h1>Ingrese sus datos</h1>
-<form method="post">
+<form class="form" method="post">
 
     {% csrf_token %}
     {{ form.as_p}}
 
-    <button type="submit"> Iniciar sesion</button>
+    <button class="btn" type="submit"> Iniciar sesion</button>
+    <a href="{% url 'register' %}">¿No tienes una cuenta? Registrarse</a>
 </form>
-<a href="{% url 'register' %}">¿No tienes una cuenta? Registrarse</a>
+
 
 {%endblock%}

@@ -3,12 +3,12 @@
 {%block body%}
 
 <h1>Ingresar vendedor</h1>
-<form method="post">
+<form class="form" method="post">
   {% csrf_token %} 
   
   {{ form.as_p}}
 
-  <button type="submit">Agregar</button>
+  <button class="btn" type="submit">Agregar</button>
 </form>
 
 {%endblock%}

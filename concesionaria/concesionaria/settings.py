@@ -40,7 +40,13 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "autos",
     "usuarios",
+    "tailwind",
+    "theme",
 ]
+
+#Tailwind
+
+TAILWIND_APP_NAME = "theme"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

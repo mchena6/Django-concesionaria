@@ -5,25 +5,24 @@
 {% block body %}
 
 <h1>Autos</h1>
+<a class="btn" href="{% url 'crear_auto' %}">Crear auto</a>
 <p>Lista de autos disponibles:</p>
-<a href="{% url 'crear_auto' %}">Crear auto</a>
-<div class="container-cars">
-    <ul class="box-cars">
+<ul class="box-cars">
+    <div class="car-item">
         {% for auto in autos %}
-        <li>Modelo: {{ auto.marca }} - {{ auto.modelo }}</li>
-        <li>Precio: {{ auto.precio }}</li>
+        <li class="flex-1 text-2xl">Modelo: {{ auto.marca }} - {{ auto.modelo }}</li>
+        <li>Precio: ${{ auto.precio }}</li>
         <li>Año: {{ auto.anio }}</li>
         {% if auto.imagen %}
-            <img src="{{ auto.imagen.url }}" alt="Imagen del auto" width="200" />
+            <img src="{{ auto.imagen.url }}" alt="Imagen del auto"/>
         {% else %}
             <p>Imagen no disponible</p>
         {% endif %}
         <li>Vendedor: {{ auto.vendedor.all|join:", " }}</li>
-        <a href="{% url 'eliminar_auto' auto.id %}"> Eliminar </a>
-        <a href="{% url 'editar_auto' auto.id %}"> Editar </a>
+        <a class="btn btn-eliminar" href="{% url 'eliminar_auto' auto.id %}"> Eliminar </a>
+        <a class="btn" href="{% url 'editar_auto' auto.id %}"> Editar </a>
         <hr />
-        <!-- Separador entre autos -->
         {% endfor %}
-    </ul>
-</div>
+    </div>
+</ul>
 {% endblock %}

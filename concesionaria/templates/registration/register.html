@@ -3,12 +3,12 @@
 {%block body%}
 
 <h1>Ingrese sus datos</h1>
-<form method="post">
+<form class="form" method="post">
 
     {% csrf_token %}
     {{ form.as_p}}
 
-    <button type="submit"> Crear usuario </button>
+    <button class="btn" type="submit"> Crear usuario </button>
 </form>
 
 {%endblock%}

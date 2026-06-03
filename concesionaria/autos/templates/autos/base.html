@@ -17,6 +17,7 @@
     </div>
 
     <div class="navbar-links">
+        <a href="{% url 'vendedores' %}">Vendedores</a>
         <a href="{% url 'autos' %}">Autos</a>
         <a href="{% url 'inicio' %}">Inicio</a>
         {% if user.is_authenticated %}

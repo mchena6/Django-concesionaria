@@ -35,7 +35,7 @@ def editar_auto(request, id):
     auto = get_object_or_404(Auto, id=id)
 
     if request.method == "POST":
-        form = AutoForm(request.POST, instance=auto)
+        form = AutoForm(request.POST, request.FILES, instance=auto)
         if form.is_valid():
             form.save()
             return redirect("autos")
@@ -85,10 +85,7 @@ def eliminar_vendedor(request, id):
     vendedor = get_object_or_404(Vendedor, id=id)
 
     if request.method == "POST":
-        if vendedor.activo:
-            vendedor.activo = False
-        else:
-            vendedor.activo = True
+        vendedor.activo = False
         vendedor.save()
 
         return redirect("autos")

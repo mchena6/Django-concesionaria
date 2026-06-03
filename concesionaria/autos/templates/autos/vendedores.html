@@ -14,12 +14,10 @@
         <li>Correo: {{ v.correo }}</li>
         <li>Teléfono: {{ v.telefono }}</li>
         {% if v.activo %}
-            <p>Vendedor activo</p>
             <a class="btn btn-eliminar" href="{% url 'eliminar_vendedor' v.id %}"> Dar de baja </a>
             <a class="btn" href="{% url 'editar_vendedor' v.id %}"> Editar </a>
         {% else %}
-            <p>Activar vendedor</p>
-            <a class="btn" href="{% url 'eliminar_vendedor' v.id %}"> Activar </a>
+            <p>VENDEDOR DADO DE BAJA</p>
         {% endif %}
         <hr />
         {% endfor %}

@@ -6,12 +6,15 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-
 @login_required
 def autos(request):
     autos = Auto.objects.all().order_by("-id").filter(activo=True)
     return render(request, "autos/autos.html", {"autos": autos})
 
+@login_required
+def vendedores(request):
+    vendedores = Vendedor.objects.all().order_by("-id")
+    return render(request, "autos/vendedores.html", {"vendedores": vendedores})
 
 def inicio(request):
     return render(request, "autos/inicio.html")
@@ -62,7 +65,7 @@ def crear_vendedor(request):
         form = VendedorForm()
         return render(request, "autos/crear_vendedor.html", {"form": form})
 
-
+@login_required
 def editar_vendedor(request, id):
     vendedor = get_object_or_404(Vendedor, id=id)
 
@@ -77,12 +80,15 @@ def editar_vendedor(request, id):
 
     return render(request, "autos/editar_vendedor.html", {"form": form})
 
-
+@login_required
 def eliminar_vendedor(request, id):
     vendedor = get_object_or_404(Vendedor, id=id)
 
     if request.method == "POST":
-        vendedor.activo = False
+        if vendedor.activo:
+            vendedor.activo = False
+        else:
+            vendedor.activo = True
         vendedor.save()
 
         return redirect("autos")
